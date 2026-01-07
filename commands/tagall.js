@@ -32,20 +32,20 @@ module.exports = {
             const senderTag = "@" + sender.split("@")[0];
             const date = new Date().toLocaleString("fr-FR", { hour12: false });
 
-            let text = `├───『Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ』───┤\n`;
+            let text = `├───『𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁』───┤\n`;
             text += `│ Group : *${groupName}*\n`;
             text += `│ Membres : *${totalMembers}*\n`;
             text += `│ Admins : *${totalAdmins}*\n`;
             text += `│ User : ${senderTag}\n`;
             text += `│ Message : *${customMessage}*\n`;
             text += `│ Date : *${date}*\n`;
-            text += `╰───────© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝚂𝙰𝙽𝙽𝚄 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃 \n\n`;
+            text += `╰───────© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁 \n\n`;
 
             members.forEach(id => {
                 text += `⟢ @${id.split('@')[0]}\n`;
             });
 
-            text += `\n⟢ © 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷 *𝚂𝙰𝙽𝙽𝚄 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃*`;
+            text += `\n⟢ © 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷 *𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁*`;
 
             await conn.sendMessage(from, {
                 text,
