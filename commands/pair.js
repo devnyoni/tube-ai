@@ -14,9 +14,9 @@ module.exports = {
                 return reply(`📞 *єηтєя уσυ ωнαтѕαρρ ηυмвєя ωιтн ¢συηтяу ¢σвє🥷*
 
 𝙴𝚇𝙰𝙼𝙿𝙻𝙴𝚂:
-🥷9478589XXXX
+🥷25576000XXXX
 𝚈𝙾𝚄 𝙽𝚄𝙼𝙱𝙰𝚁 𝚃𝙾 𝙿𝙰𝙸𝚁:
-.pair 9478589XXXX`);
+.pair 25576000XXXX`);
             }
 
             const number = q.trim();
@@ -41,7 +41,7 @@ Follow these steps:
 4. Link a Device
 5. Enter the code above
 
-✅ *Your WhatsApp will now connect to Qᴜᴇᴇɴ.*`);
+✅ *Your WhatsApp will now connect to  𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁.*`);
             }
 
             // API responded but no code found
