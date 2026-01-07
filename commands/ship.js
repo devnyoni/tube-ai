@@ -37,7 +37,7 @@ module.exports = {
 ❤️ @${sender.split("@")[0]} + @${target.split("@")[0]}
 💖 Congratulations! 🎉
 
-> © 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝚂𝙰𝙽𝙽𝚄 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃`;
+> © 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁`;
 
       // React first
       await conn.sendMessage(from, { react: { text: "❤️", key: mek.key } });
@@ -50,8 +50,8 @@ module.exports = {
           forwardingScore: 999,
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363282833839832@newsletter",
-            newsletterName: "© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝚂𝙰𝙽𝙽𝚄 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃",
+            newsletterJid: "120363399470975987@newsletter",
+            newsletterName: "© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁",
             serverMessageId: 150
           }
         }
