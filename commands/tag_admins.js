@@ -47,7 +47,7 @@ module.exports = {
                 teks += `│${randomEmoji} @${adminId.split('@')[0]}\n`;
             });
 
-            teks += "└──❍ Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ ❍──";
+            teks += "└──❍ 𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁 ❍──";
 
             // Send with channel context
             await conn.sendMessage(from, {
@@ -57,8 +57,8 @@ module.exports = {
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: "120363282833839832@newsletter",
-                        newsletterName: "Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ",
+                        newsletterJid: "120363399470975987@newsletter",
+                        newsletterName: "𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁",
                         serverMessageId: 201
                     }
                 }
