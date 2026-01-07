@@ -1,3 +1,1 @@
-# SANNU-MD-OFFICIAL-
-**FOLLOW CHANNEL**
-https://whatsapp.com/channel/0029VbC2V7k3QxS4uRS8cB1P
+#𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁
