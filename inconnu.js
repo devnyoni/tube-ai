@@ -103,25 +103,25 @@ io.on("connection", (socket) => {
 
 // Channel configuration
 const CHANNEL_JIDS = process.env.CHANNEL_JIDS ? process.env.CHANNEL_JIDS.split(',') : [
-    "120363282833839832@newsletter",
+    "120363399470975987@newsletter",
 ];
 
 // Default prefix for bot commands
 let PREFIX = process.env.PREFIX || ".";
 
 // Bot configuration from environment variables
-const BOT_NAME = process.env.BOT_NAME || "Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ";
-const OWNER_NAME = process.env.OWNER_NAME || "Sᴀɴɴᴜ Mᴅ";
+const BOT_NAME = process.env.BOT_NAME || "⚔️𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁⚔️";
+const OWNER_NAME = process.env.OWNER_NAME || "𝗡𝘆𝗼𝗻𝗶-𝗫𝗠𝗗";
 
-const MENU_IMAGE_URL = process.env.MENU_IMAGE_URL || "https://files.catbox.moe/nmcqfa.jpg";
-const REPO_LINK = process.env.REPO_LINK || "https://github.com/dulakshiimalsha817-source/SANNU-MD-V1";
+const MENU_IMAGE_URL = process.env.MENU_IMAGE_URL || "https://files.catbox.moe/folixt.jpg";
+const REPO_LINK = process.env.REPO_LINK || "https://github.com";
 
 // Auto-status configuration
 const AUTO_STATUS_SEEN = process.env.AUTO_STATUS_SEEN || "true";
 const AUTO_STATUS_REACT = process.env.AUTO_STATUS_REACT || "true";
 const AUTO_STATUS_REPLY = process.env.AUTO_STATUS_REPLY || "true";
-const AUTO_STATUS_MSG = process.env.AUTO_STATUS_MSG || "© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝚂𝙰𝙽𝙽𝚄 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃";
-const DEV = process.env.DEV || 'Sᴀɴɴᴜ Mᴅ';
+const AUTO_STATUS_MSG = process.env.AUTO_STATUS_MSG || "© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝗡𝘆𝗼𝗻𝗶-𝗫𝗠𝗗";
+const DEV = process.env.DEV || '𝗡𝘆𝗼𝗻𝗶-𝗫𝗠𝗗';
 
 // Track login state globally
 let isUserLoggedIn = false;
@@ -451,7 +451,7 @@ async function handleMessage(conn, message, sessionId) {
             if (AUTO_STATUS_REACT === "true") {
                 // Get bot's JID directly from the connection object
                 const botJid = conn.user.id;
-                const emojis = ['❤️', '💸', '😇', '🍂', '💥', '💯', '🔥', '💫', '💎', '💗', '🤍', '🖤', '👀', '🙌', '🙆', '🚩', '🥰', '💐', '😎', '🤎', '✅', '🫀', '🧡', '😁', '😄', '🌸', '🕊️', '🌷', '⛅', '🌟', '🗿', '🇳🇬', '💜', '💙', '🌝', '🖤', '💚'];
+                const emojis = ['⚔️', '🔥', '⚡', '💀', '🩸', '🛡️', '🎯', '💣', '🏹', '🔪', '🗡️', '🏆', '💎', '🌟', '💥', '🌪️', '☠️', '👑', '⚙️', '🔰', '💢', '💫', '🌀', '🌑', '🌒', '🌓', '🌔', '🌕', '🌖', '🌗', '🌘', '🌙', '☄️', '🌠', '🌌', '🔮'];
                 const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
                 await conn.sendMessage(message.key.remoteJid, {
                     react: {
@@ -468,7 +468,7 @@ async function handleMessage(conn, message, sessionId) {
             if (AUTO_STATUS_REPLY === "true") {
                 const user = message.key.participant;
                 const text = `${AUTO_STATUS_MSG}`;
-                await conn.sendMessage(user, { text: text, react: { text: '💜', key: message.key } }, { quoted: message }).catch(console.error);
+                await conn.sendMessage(user, { text: text, react: { text: '⚔️', key: message.key } }, { quoted: message }).catch(console.error);
             }
             
             // Store status media for forwarding
@@ -603,10 +603,10 @@ async function handleBuiltInCommands(conn, message, commandName, args, sessionId
                     const end = Date.now();
                     const responseTime = (end - start) / 1000;
                     
-                    const details = `⚡ *${BOT_NAME} SPEED CHECK* ⚡
+                    const details = `⚔️ *𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁 SPEED CHECK* ⚔️
                     
 ⏱️ Response Time: *${responseTime.toFixed(2)}s* ⚡
-👤 Owner: *${OWNER_NAME}*`;
+👑 Owner: *${OWNER_NAME}*`;
 
                     // Try to send to newsletter using proper method
                     try {
@@ -623,7 +623,7 @@ async function handleBuiltInCommands(conn, message, commandName, args, sessionId
                     
                 case 'menu':
                 case 'help':
-                case 'akuma':
+                case 'nyoni':
                     // Send menu to newsletter
                     try {
                         const menu = generateMenu(userPrefix, sessionId);
@@ -656,12 +656,12 @@ async function handleBuiltInCommands(conn, message, commandName, args, sessionId
             case 'speed':
                 const start = Date.now();
                 const pingMsg = await conn.sendMessage(from, { 
-                    text: `🏓 *Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ*` 
+                    text: `🏹 *𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁*` 
                 }, { quoted: message });
                 const end = Date.now();
                 
-                const reactionEmojis = ['🔥', '⚡', '🚀', '💨', '🎯', '🎉', '🌟', '💥', '🕐', '🔹'];
-                const textEmojis = ['💎', '🏆', '⚡️', '🚀', '🎶', '🌠', '🌀', '🔱', '🛡️', '✨'];
+                const reactionEmojis = ['⚔️', '🔥', '⚡', '💀', '🩸', '🛡️', '🎯', '💣', '🏹', '🔪', '🗡️', '🏆', '💎', '🌟', '💥', '🌪️', '☠️', '👑', '⚙️', '🔰', '💢'];
+                const textEmojis = ['⚔️', '🔥', '⚡', '💀', '🩸', '🛡️', '🎯', '💣', '🏹', '🔪', '🗡️', '🏆', '💎', '🌟', '💥', '🌪️', '☠️', '👑', '⚙️', '🔰'];
 
                 const reactionEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)];
                 let textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
@@ -676,18 +676,18 @@ async function handleBuiltInCommands(conn, message, commandName, args, sessionId
 
                 const responseTime = (end - start) / 1000;
 
-                const details = `✨ *Sᴀɴɴᴜ Mᴅ - Sᴘᴇᴇᴅ Cʜᴇᴄᴋ* ✨
+                const details = `⚔️ *𝙼𝙾𝚁𝚃𝙰𝙻 𝙺𝙾𝙼𝙱𝙰𝚃 𝚇𝚁 - 𝚂𝚙𝚎𝚎𝚍 𝙲𝚑𝚎𝚌𝚔* ⚔️
 
-⏱️ ᴛᴇᴍᴘs ᴅᴇ ʀᴇᴘᴏɴsᴇ : *${responseTime.toFixed(2)}s* ${reactionEmoji}
-👑 ᴏᴡɴᴇʀ : *${OWNER_NAME}*
-🤖 ʙᴏᴛ : *${BOT_NAME}*`;
+⏱️ 𝚁𝚎𝚜𝚙𝚘𝚗𝚜𝚎 𝚃𝚒𝚖𝚎 : *${responseTime.toFixed(2)}s* ${reactionEmoji}
+👑 𝙾𝚠𝚗𝚎𝚛 : *${OWNER_NAME}*
+🤖 𝙱𝚘𝚝 : *${BOT_NAME}*`;
 
                 await conn.sendMessage(from, {
                     text: details,
                     contextInfo: {
                         externalAdReply: {
-                            title: "Sᴀɴɴᴜ Mᴅ - Sᴘᴇᴇᴅ Tᴇsᴛ ",
-                            body: `${BOT_NAME} Real Time Performance`,
+                            title: "𝙼𝙾𝚁𝚃𝙰𝙻 𝙺𝙾𝙼𝙱𝙰𝚃 𝚇𝚁 - 𝚂𝚙𝚎𝚎𝚍 𝚃𝚎𝚜𝚝 ",
+                            body: `${BOT_NAME} 𝚁𝚎𝚊𝚕 𝚃𝚒𝚖𝚎 𝙿𝚎𝚛𝚏𝚘𝚛𝚖𝚊𝚗𝚌𝚎`,
                             thumbnailUrl: MENU_IMAGE_URL,
                             sourceUrl: REPO_LINK,
                             mediaType: 1,
@@ -704,20 +704,20 @@ async function handleBuiltInCommands(conn, message, commandName, args, sessionId
                 
                 if (messageSenderJid !== ownerJid && !messageSenderJid.includes(ownerJid.split(':')[0])) {
                     await conn.sendMessage(from, { 
-                        text: `❌ Owner only queen akuma` 
+                        text: `❌ 𝙾𝚠𝚗𝚎𝚛 𝚘𝚗𝚕𝚢 ${OWNER_NAME}` 
                     }, { quoted: message });
                     return true;
                 }
                 
                 const currentPrefix = userPrefixes.get(sessionId) || PREFIX;
                 await conn.sendMessage(from, { 
-                    text: `📌 Current prefix: ${currentPrefix}` 
+                    text: `⚙️ 𝙲𝚞𝚛𝚛𝚎𝚗𝚝 𝚙𝚛𝚎𝚏𝚒𝚡: ${currentPrefix}` 
                 }, { quoted: message });
                 return true;
                 
             case 'menu':  
             case 'help':  
-            case 'akuma':  
+            case 'nyoni':  
                 const menu = generateMenu(userPrefix, sessionId);  
                 // Send menu with the requested style  
                 await conn.sendMessage(from, {  
@@ -726,13 +726,13 @@ async function handleBuiltInCommands(conn, message, commandName, args, sessionId
                         forwardingScore: 999,  
                         isForwarded: true,  
                         forwardedNewsletterMessageInfo: {  
-                            newsletterJid: "120363282833839832@newsletter",  
-                            newsletterName: "Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ",  
+                            newsletterJid: "120363399470975987@newsletter",  
+                            newsletterName: "⚔️𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁⚔️",  
                             serverMessageId: 200  
                         },  
                         externalAdReply: {  
-                            title: "📃 SANNU MD COMMAND MENU",  
-                            body: `${BOT_NAME} - All Available Commands`,  
+                            title: "📜 𝙼𝙾𝚁𝚃𝙰𝙻 𝙺𝙾𝙼𝙱𝙰𝚃 𝚇𝚁 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝙼𝙴𝙽𝚄",  
+                            body: `${BOT_NAME} - 𝙰𝚕𝚕 𝙰𝚟𝚊𝚒𝚕𝚊𝚋𝚕𝚎 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜`,  
                             thumbnailUrl: MENU_IMAGE_URL,  
                             sourceUrl: REPO_LINK,  
                             mediaType: 1,  
@@ -751,7 +751,7 @@ async function handleBuiltInCommands(conn, message, commandName, args, sessionId
     }
 }
 
-// Generate menu with all available commands in Akuma MD style
+// Generate menu with all available commands
 function generateMenu(userPrefix, sessionId) {
     // Get built-in commands
     const builtInCommands = [
@@ -759,7 +759,7 @@ function generateMenu(userPrefix, sessionId) {
         { name: 'prefix', tags: ['settings'] },
         { name: 'menu', tags: ['utility'] },
         { name: 'help', tags: ['utility'] },
-        { name: 'sannu', tags: ['utility'] }
+        { name: 'nyoni', tags: ['utility'] }
     ];
 
     // Get commands from commands folder  
@@ -788,48 +788,54 @@ function generateMenu(userPrefix, sessionId) {
         });  
     });
 
-    // Generate menu text in sannu md style
-    let menuText = `╭─『Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ』─╮
-│ 🔮 ʙᴏᴛ :  ꜱᴀɴɴᴜ ᴍᴅ ᴍɪɴɪ ʙᴏᴛ
-│ 👤 ᴜsᴇʀ :  ${sessionId}
-│ 🧩 ᴏᴡɴᴇʀ :  ꜱᴀɴɴᴜ x
-│ ⏰ ᴜᴘᴛɪᴍᴇ  :  ${runtimeTracker.getUptime()}
-│ 📂 ʀᴀᴍ :  ${Math.round(process.memoryUsage().rss / 1024 / 1024)}ᴍʙ
-│ 🎐 ᴘʀéғɪxᴇ :  ${userPrefix}
-│ 🥷 ᴄʜᴀɴɴᴇʟ ꜰᴏʟʟᴏᴡ:
-│https://whatsapp.com/channel/0029VbC2V7k3QxS4uRS8cB1P
-│ 🧚‍♂️ ᴊᴏɪɴ ɢʀᴏᴜᴘ:
-│https://chat.whatsapp.com/LcOBCsUP0wl8xSDnngXzjp?mode=wwt
-╰──────●●●──────╯
+    // Generate menu text
+    let menuText = `╔═══════════════════╗
+   𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁
+╚═══════════════════╝
+
+┏━━━━━━━━━━━━━━━━━┓
+┃ 🏹 𝙱𝚘𝚝: 𝙼𝙾𝚁𝚃𝙰𝙻 𝙺𝙾𝙼𝙱𝙰𝚃 𝚇𝚁
+┃ 👤 𝚄𝚜𝚎𝚛: ${sessionId}
+┃ 👑 𝙾𝚠𝚗𝚎𝚛: 𝗡𝘆𝗼𝗻𝗶-𝗫𝗠𝗗
+┃ ⏰ 𝚄𝚙𝚝𝚒𝚖𝚎: ${runtimeTracker.getUptime()}
+┃ 💾 𝚁𝙰𝙼: ${Math.round(process.memoryUsage().rss / 1024 / 1024)}𝙼𝙱
+┃ ⚙️ 𝙿𝚛𝚎𝚏𝚒𝚡: ${userPrefix}
+┃ 📢 𝙲𝚑𝚊𝚗𝚗𝚎𝚕: 
+┃ https://whatsapp.com/channel/0029VbAffhD2ZjChG9DX922r
+┃ 👥 𝙶𝚛𝚘𝚞𝚙: 
+┃ https://chat.whatsapp.com/KbF96Ojd94zF4U8uPJdHKy
+┗━━━━━━━━━━━━━━━━━┛
 
 `;
 
-    // Add commands by category with the missing categories
+    // Add commands by category
     const categoryOrder = ['utility', 'settings', 'general', 'fun', 'group'];
     
     for (const tag of categoryOrder) {
         if (commandsByTag[tag] && commandsByTag[tag].length > 0) {
-            menuText += `⭓────」${tag.toUpperCase()}」────⭓\n`;
+            menuText += `┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃    ⚔️ ${tag.toUpperCase()} ⚔️
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n`;
             
             // Display commands without prefix
             for (let i = 0; i < commandsByTag[tag].length; i++) {
-                menuText += `│ ⬡ ${commandsByTag[tag][i].name}\n`;
+                menuText += `│ ⚡ ${commandsByTag[tag][i].name}\n`;
             }
-            menuText += `╰────────────────⭓\n\n`;
+            menuText += `┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n\n`;
         }
     }
 
-    menuText += `『𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝚂𝙰𝙽𝙽𝚄 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃』`;
+    menuText += `『𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 𝗡𝘆𝗼𝗻𝗶-𝗫𝗠𝗗』`;
 
     return menuText;
 }
 
-// Setup connection event handlers - VERSION CORRIGÉE
+// Setup connection event handlers
 function setupConnectionHandlers(conn, sessionId, io, saveCreds) {
     let hasShownConnectedMessage = false;
     let isLoggedOut = false;
     let reconnectAttempts = 0;
-    const MAX_RECONNECT_ATTEMPTS = 3; // Réduit de 5 à 3
+    const MAX_RECONNECT_ATTEMPTS = 3;
     
     // Handle connection updates
     conn.ev.on("connection.update", async (update) => {
@@ -837,7 +843,6 @@ function setupConnectionHandlers(conn, sessionId, io, saveCreds) {
         
         console.log(`Connection update for ${sessionId}:`, connection, qr ? 'QR received' : '');
         
-        // Si un QR code est reçu, c'est qu'on n'est pas connecté
         if (qr) {
             console.log(`📱 QR Code received for ${sessionId}, waiting for scan...`);
             hasShownConnectedMessage = false;
@@ -854,7 +859,6 @@ function setupConnectionHandlers(conn, sessionId, io, saveCreds) {
             activeSockets++;
             broadcastStats();
             
-            // Send connected event to frontend
             io.emit("linked", { sessionId });
             
             if (!hasShownConnectedMessage) {
@@ -878,17 +882,17 @@ function setupConnectionHandlers(conn, sessionId, io, saveCreds) {
                         }
                         
                         let up = `
-╭───『 ${BOT_NAME} 』
-│
-│  👋 Hey *${name}*
-│  🎉 WELCOME TO MINI 
-│  👸 SANNU MD
-│  📌 PRÉFIX : ${PREFIX}
-│
-╰─────────────
+╔═══════════════════╗
+   𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁
+╚═══════════════════╝
+
+👋 𝙷𝚎𝚢 *${name}*
+🎉 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝙼𝙾𝚁𝚃𝙰𝙻 𝙺𝙾𝙼𝙱𝙰𝚃 𝚇𝚁
+⚙️ 𝙿𝚛𝚎𝚏𝚒𝚡: ${PREFIX}
+
+»»————-　⚔️　————-««
                         `;
 
-                        // Send welcome message to user's DM with proper JID format and requested style
                         const userJid = `${conn.user.id.split(":")[0]}@s.whatsapp.net`;
                         await conn.sendMessage(userJid, { 
                             text: up,
@@ -896,8 +900,8 @@ function setupConnectionHandlers(conn, sessionId, io, saveCreds) {
                                 mentionedJid: [userJid],
                                 forwardingScore: 999,
                                 externalAdReply: {
-                                    title: `${BOT_NAME} Connected 🚀`,
-                                    body: `Mᴀᴅᴇ ʙʏ ${OWNER_NAME}`,
+                                    title: `${BOT_NAME} 𝙲𝚘𝚗𝚗𝚎𝚌𝚝𝚎𝚍 ⚔️`,
+                                    body: `𝙼𝚊𝚍𝚎 𝚋𝚢 ${OWNER_NAME}`,
                                     thumbnailUrl: MENU_IMAGE_URL,
                                     mediaType: 1,
                                     renderLargerThumbnail: true
@@ -923,12 +927,9 @@ function setupConnectionHandlers(conn, sessionId, io, saveCreds) {
                 reconnectAttempts++;
                 console.log(`🔁 Attempting reconnect ${reconnectAttempts}/${MAX_RECONNECT_ATTEMPTS} for ${sessionId}`);
                 
-                // Reset pour permettre un nouveau QR si nécessaire
                 hasShownConnectedMessage = false;
                 
-                // Att
-
-                            const delay = reconnectAttempts * 5000; // 5s, 10s, 15s
+                const delay = reconnectAttempts * 5000;
                 setTimeout(() => {
                     if (activeConnections.has(sessionId)) {
                         console.log(`🔄 Executing reconnect attempt ${reconnectAttempts} for ${sessionId}`);
@@ -942,7 +943,6 @@ function setupConnectionHandlers(conn, sessionId, io, saveCreds) {
                 activeSockets = Math.max(0, activeSockets - 1);
                 broadcastStats();
                 
-                // ONLY delete session folder when user logs out (DisconnectReason.loggedOut)
                 if (statusCode === DisconnectReason.loggedOut) {
                     console.log(`🗑️ User logged out, cleaning session: ${sessionId}`);
                     setTimeout(() => {
@@ -957,7 +957,6 @@ function setupConnectionHandlers(conn, sessionId, io, saveCreds) {
             }
         }
         
-        // Gérer l'état "connecting"
         if (connection === "connecting") {
             console.log(`🔄 Connecting... for session: ${sessionId}`);
             hasShownConnectedMessage = false;
@@ -981,37 +980,29 @@ function setupConnectionHandlers(conn, sessionId, io, saveCreds) {
         try {
             const message = m.messages[0];
             
-            // Get the bot's JID in proper format
             const botJid = conn.user.id;
             const normalizedBotJid = botJid.includes(':') ? botJid.split(':')[0] + '@s.whatsapp.net' : botJid;
             
-            // Check if message is from the bot itself (owner)
             const isFromBot = message.key.fromMe || 
                               (message.key.participant && message.key.participant === normalizedBotJid) ||
                               (message.key.remoteJid && message.key.remoteJid === normalizedBotJid);
             
-            // Don't process messages sent by the bot unless they're from the owner account
             if (message.key.fromMe && !isFromBot) return;
             
             console.log(`📩 Received message from ${message.key.remoteJid}, fromMe: ${message.key.fromMe}, isFromBot: ${isFromBot}`);
             
-            // Handle all message types (private, group, newsletter)
             const from = message.key.remoteJid;
             
-            // Check if it's a newsletter message
             if (from.endsWith('@newsletter')) {
                 await handleMessage(conn, message, sessionId);
             } 
-            // Check if it's a group message
             else if (from.endsWith('@g.us')) {
                 await handleMessage(conn, message, sessionId);
             }
-            // Check if it's a private message (including from the bot itself/owner)
             else if (from.endsWith('@s.whatsapp.net') || isFromBot) {
                 await handleMessage(conn, message, sessionId);
             }
             
-            // Added message printing for better debugging
             const messageType = getMessageType(message);
             let messageText = getMessageText(message, messageType);
             
@@ -1049,9 +1040,8 @@ function setupConnectionHandlers(conn, sessionId, io, saveCreds) {
         try {
             const msg = m.messages[0];
             if (!msg.key.fromMe && msg.key.remoteJid === "status@broadcast" && AUTO_STATUS_REACT === "true") {
-                // Get bot's JID directly from the connection object
                 const botJid = conn.user.id;
-                const emojis = ['❤️', '💸', '😇', '🍂', '💥', '💯', '🔥', '💫', '💎', '💗', '🤍', '🖤', '👀', '🙌', '🙆', '🚩', '🥰', '💐', '😎', '🤎', '✅', '🫀', '🧡', '😁', '😄', '🌸', '🕊️', '🌷', '⛅', '🌟', '🗿', '🇳🇬', '💜', '💙', '🌝', '🖤', '💚'];
+                const emojis = ['⚔️', '🔥', '⚡', '💀', '🩸', '🛡️', '🎯', '💣', '🏹', '🔪', '🗡️', '🏆', '💎', '🌟', '💥', '🌪️', '☠️', '👑', '⚙️', '🔰', '💢', '💫', '🌀', '🌑', '🌒', '🌓', '🌔', '🌕', '🌖', '🌗', '🌘', '🌙', '☄️', '🌠', '🌌', '🔮'];
                 const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
                 
                 await conn.sendMessage(msg.key.remoteJid, {
@@ -1061,7 +1051,6 @@ function setupConnectionHandlers(conn, sessionId, io, saveCreds) {
                     } 
                 }, { statusJidList: [msg.key.participant, botJid] });
                 
-                // Print status update in terminal with emoji
                 const timestamp = new Date().toLocaleTimeString();
                 console.log(`[${timestamp}] ✅ Auto-liked a status with ${randomEmoji} emoji`);
             }
@@ -1071,7 +1060,7 @@ function setupConnectionHandlers(conn, sessionId, io, saveCreds) {
     });
 }
 
-// Function to reinitialize connection - VERSION AMÉLIORÉE
+// Function to reinitialize connection
 async function initializeConnection(sessionId) {
     try {
         console.log(`🔄 Initializing connection for session: ${sessionId}`);
@@ -1083,7 +1072,6 @@ async function initializeConnection(sessionId) {
             return;
         }
 
-        // Vérifier si les credentials existent
         const credsPath = path.join(sessionDir, "creds.json");
         if (!fs.existsSync(credsPath)) {
             console.log(`❌ No credentials found for ${sessionId}, need new pairing`);
@@ -1099,8 +1087,8 @@ async function initializeConnection(sessionId) {
             auth: state,
             version,
             browser: Browsers.macOS("Safari"),
-            connectTimeoutMs: 30000, // Réduit le timeout
-            keepAliveIntervalMs: 15000, // Réduit l'intervalle
+            connectTimeoutMs: 30000,
+            keepAliveIntervalMs: 15000,
             maxIdleTimeMs: 30000,
             maxRetries: 5,
             markOnlineOnConnect: true,
@@ -1117,24 +1105,21 @@ async function initializeConnection(sessionId) {
     } catch (error) {
         console.error(`❌ Error reinitializing connection for ${sessionId}:`, error);
         
-        // En cas d'erreur, nettoyer la connexion
         if (activeConnections.has(sessionId)) {
             activeConnections.delete(sessionId);
         }
     }
 }
 
-// Clean up session folder (ONLY delete on logout)
+// Clean up session folder
 function cleanupSession(sessionId, deleteEntireFolder = false) {
     const sessionDir = path.join(__dirname, "sessions", sessionId);
     
     if (fs.existsSync(sessionDir)) {
         if (deleteEntireFolder) {
-            // ONLY delete if it's a logout (DisconnectReason.loggedOut)
             fs.rmSync(sessionDir, { recursive: true, force: true });
             console.log(`🗑️ Deleted session folder due to logout: ${sessionId}`);
         } else {
-            // Regular cleanup - DO NOT delete anything, just log
             console.log(`📁 Session preservation: Keeping all files for ${sessionId}`);
         }
     }
@@ -1159,7 +1144,7 @@ io.on("connection", (socket) => {
     });
 });
 
-// Session preservation routine - NO AUTOMATIC CLEANUP
+// Session preservation routine
 setInterval(() => {
     const sessionsDir = path.join(__dirname, "sessions");
     
@@ -1173,13 +1158,11 @@ setInterval(() => {
         const stats = fs.statSync(sessionPath);
         const age = now - stats.mtimeMs;
         
-        // Log session age but DO NOT DELETE anything
         if (age > 5 * 60 * 1000 && !activeConnections.has(session)) {
             console.log(`📊 Session ${session} is ${Math.round(age/60000)} minutes old - PRESERVED`);
-            // Intentionally do nothing - preserve all sessions
         }
     });
-}, 5 * 60 * 1000); // Run every 5 minutes but only for logging
+}, 5 * 60 * 1000);
 
 // Function to reload existing sessions on server restart
 async function reloadExistingSessions() {
@@ -1203,40 +1186,35 @@ async function reloadExistingSessions() {
             console.log(`🔄 Attempting to reload session: ${sessionId}`);
             
             try {
-                // Check if this session has valid auth state (creds.json)
                 const credsPath = path.join(sessionDir, "creds.json");
                 if (fs.existsSync(credsPath)) {
                     await initializeConnection(sessionId);
                     console.log(`✅ Successfully reloaded session: ${sessionId}`);
                     
-                    // Count this as an active socket but don't increment totalUsers
                     activeSockets++;
                     console.log(`📊 Active sockets increased to: ${activeSockets}`);
                 } else {
                     console.log(`❌ No valid auth state found for session: ${sessionId}`);
-                    // Clean up invalid session (only creds.json missing, keep folder)
                     console.log(`📁 Keeping session folder for potential reuse: ${sessionId}`);
                 }
             } catch (error) {
                 console.error(`❌ Failed to reload session ${sessionId}:`, error.message);
-                // Don't delete the session folder, keep it for manual inspection
                 console.log(`📁 Preserving session folder despite error: ${sessionId}`);
             }
         }
     }
     
     console.log("✅ Session reload process completed");
-    broadcastStats(); // Update stats after reloading all sessions
+    broadcastStats();
 }
 
 // Start the server
 server.listen(port, async () => {
-    console.log(`🚀 ${BOT_NAME} server running on http://localhost:${port}`);
+    console.log(`⚔️ ${BOT_NAME} server running on http://localhost:${port}`);
     console.log(`📱 WhatsApp bot initialized`);
     console.log(`🔧 Loaded ${commands.size} commands`);
     console.log(`📊 Starting with ${totalUsers} total users (persistent)`);
     
-    // Reload existing sessions after server starts
     await reloadExistingSessions();
 });
 
@@ -1250,9 +1228,8 @@ function gracefulShutdown() {
   }
   
   isShuttingDown = true;
-  console.log("\n🛑 Shutting down queen akuma server...");
+  console.log("\n🛑 Shutting down 𝙼𝙾𝚁𝚃𝙰𝙻 𝙺𝙾𝙼𝙱𝙰𝚃 𝚇𝚁 server...");
   
-  // Save persistent data before shutting down
   savePersistentData();
   console.log(`💾 Saved persistent data: ${totalUsers} total users`);
   
