@@ -27,7 +27,7 @@ module.exports = {
       const techInfo = `
 ╭───『 ⚙️ 𝗧𝗘𝗖𝗛𝗡𝗜𝗖𝗔𝗟 𝗜𝗡𝗙𝗢 』
 │
-│ 𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁🥷
+│𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁🥷
 │
 │ 🤖 *BOT DETAILS:*
 │ ├─ Name: 𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁
@@ -37,7 +37,7 @@ module.exports = {
 │ ├─ Platform: Node.js ${process.version}
 │ └─ Uptime: ${hours}h ${minutes}m ${seconds}s
 │
-│Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ🥷
+│𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁🥷
 │
 │ 💻 *SYSTEM INFO:*
 │ ├─ OS: ${os.type()} ${os.release()}
@@ -46,16 +46,16 @@ module.exports = {
 │ ├─ Memory: ${freeMem}GB / ${totalMem}GB
 │ └─ CPU Cores: ${os.cpus().length}
 │
-│Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ🥷
+│𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁🥷
 │
 │ 📊 *BOT STATS:*
-│ ├─ Commands: 50+
+│ ├─ 𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁: 50+
 │ ├─ Groups: Active
 │ ├─ Users: Serving
 │ ├─ Speed: Instant
 │ └─ Status: ✅ Online
 │
-│Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ🥷
+│ 𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁🥷
 │
 │ 🔧 *TECHNOLOGIES:*
 │ ├─ WhatsApp Web Protocol
@@ -64,7 +64,7 @@ module.exports = {
 │ ├─ Redis Cache
 │ └─ Express Server
 │
-│Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ🥷
+│𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁🥷
 │
 │ 📞 *CONTACT DEVELOPER:*
 │ ├─ WhatsApp: +255760003443
@@ -82,7 +82,7 @@ module.exports = {
         contextInfo: {
           forwardingScore: 999,
           isForwarded: true,
-          forwardedNewsletterMessageInfo: {
+          forwardedNwsletterMessageInfo: {
             newsletterJid: "120363399470975987@newsletter",
             newsletterName: "𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁",
             serverMessageId: 302
