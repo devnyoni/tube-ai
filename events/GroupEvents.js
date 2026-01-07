@@ -2,9 +2,9 @@
 const { isJidGroup } = require('@whiskeysockets/baileys');
 
 const defaultProfilePics = [
-  'https://files.catbox.moe/1oq196.jpg',
-  'https://files.catbox.moe/1oq196.jpg',
-  'https://files.catbox.moe/1oq196.jpg',
+  'https://files.catbox.moe/8s7lxh.jpg',
+  'https://files.catbox.moe/8s7lxh.jpg',
+  'https://files.catbox.moe/8s7lxh.jpg',
 ];
 
 // Store violation counts per user per group
@@ -16,8 +16,8 @@ const getContextInfo = (mentionedJids) => ({
   forwardingScore: 999,
   isForwarded: true,
   forwardedNewsletterMessageInfo: {
-    newsletterJid: '120363282833839832@newsletter',
-    newsletterName: "ꜱᴀɴɴᴜ ᴍᴅ ᴍɪɴɪ",
+    newsletterJid: '120363399470975987@newsletter',
+    newsletterName: "𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁",
     serverMessageId: 200,
   },
 });
@@ -176,11 +176,11 @@ module.exports = async (conn, update, m) => {
 │ ${desc}
 │ 
 │ 🥷 ʙᴏᴛ ᴄʜᴀɴɴᴇʟ ꜰᴏʟʟᴏᴡ:
-https://whatsapp.com/channel/0029VbC2V7k3QxS4uRS8cB1P
+https://whatsapp.com/channel/0029VbAffhD2ZjChG9DX922r
 │ 🧚‍♂️ ʙᴏᴛ ɢʀᴏᴜᴘ ᴊᴏɪɴ:
-https://chat.whatsapp.com/LcOBCsUP0wl8xSDnngXzjp?mode=wwt
+https://chat.whatsapp.com/KbF96Ojd94zF4U8uPJdHKy
 │
-│      © 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝚂𝙰𝙽𝙽𝚄 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃
+│      © 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁
 ╰─────────────-─────
         `.trim();
 
@@ -204,11 +204,11 @@ https://chat.whatsapp.com/LcOBCsUP0wl8xSDnngXzjp?mode=wwt
 │ 🌟 𝐖𝙴 𝙻𝙻 𝐌𝙸𝚂𝚂 𝐘𝙾𝚄 👋
 │
 │ 🥷 ʙᴏᴛ ᴄʜᴀɴɴᴇʟ ꜰᴏʟʟᴏᴡ:
-https://whatsapp.com/channel/0029VbC2V7k3QxS4uRS8cB1P
+https://whatsapp.com/channel/0029VbAffhD2ZjChG9DX922r
 │ 🧚‍♂️ ʙᴏᴛ ɢʀᴏᴜᴘ ᴊᴏɪɴ:
-https://chat.whatsapp.com/LcOBCsUP0wl8xSDnngXzjp?mode=wwt
+https://chat.whatsapp.com/KbF96Ojd94zF4U8uPJdHKy
 │
-│      © 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝚂𝙰𝙽𝙽𝚄 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃
+│      © 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁
 ╰─────────────-─────
         `.trim();
 
