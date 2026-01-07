@@ -27,11 +27,11 @@ module.exports = {
       const techInfo = `
 ╭───『 ⚙️ 𝗧𝗘𝗖𝗛𝗡𝗜𝗖𝗔𝗟 𝗜𝗡𝗙𝗢 』
 │
-│Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ🥷
+│ 𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁🥷
 │
 │ 🤖 *BOT DETAILS:*
 │ ├─ Name: Sannu Md
-│ ├─ Developer: sannu x
+│ ├─ Developer: nyoni
 │ ├─ Version: 2.0.0
 │ ├─ Library: Baileys MD
 │ ├─ Platform: Node.js ${process.version}
@@ -67,14 +67,14 @@ module.exports = {
 │Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ🥷
 │
 │ 📞 *CONTACT DEVELOPER:*
-│ ├─ WhatsApp: +94772563976
-│ ├─ GitHub: SANNU-MD 
-│ └─ Email: inconnuboy39@gmail.com
+│ ├─ WhatsApp: +255760003443
+│ ├─ GitHub: nyoni-xmd
+│ └─ Email: devnyoni@gmail.com
 │
-╰─© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝚂𝙰𝙽𝙽𝚄 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃─
+╰─© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁─
       `.trim();
 
-      const devPp = "https://files.catbox.moe/nmcqfa.jpg";
+      const devPp = "https://files.catbox.moe/8s7lxh.jpg";
 
       await conn.sendMessage(from, {
         image: { url: devPp },
@@ -83,8 +83,8 @@ module.exports = {
           forwardingScore: 999,
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363282833839832@newsletter",
-            newsletterName: "Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ",
+            newsletterJid: "120363399470975987@newsletter",
+            newsletterName: "𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁",
             serverMessageId: 302
           }
         }
@@ -103,8 +103,8 @@ module.exports = {
           forwardingScore: 999,
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363282833839832@newsletter",
-            newsletterName: "Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ", 
+            newsletterJid: "120363399470975987@newsletter",
+            newsletterName: "𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁", 
             serverMessageId: 303
           }
         }
