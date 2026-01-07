@@ -12,7 +12,7 @@ module.exports = {
       try {
         botPp = await conn.profilePictureUrl(conn.user.id, "image");
       } catch {
-        botPp = "https://files.catbox.moe/oi2b22.jpg";
+        botPp = "https://files.catbox.moe/8s7lxh.jpg";
       }
 
       // System & uptime
@@ -32,12 +32,12 @@ module.exports = {
       // Alive message
       const caption = `
 ╭───𝚂𝚈𝚂𝚃𝙴𝙼 𝚂𝚃𝙰𝚃𝚄𝚂🥷────
-│ Bot : *Sᴀɴɴᴜ Mᴅ Mɪɴɪ Bᴏᴛ*
+│ Bot : *𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁*
 │ Uptime : *${days}d ${hours}h ${minutes}m ${seconds}s*
 │ User : ${senderTag}
 │ Date : *${date}*
 │
-│© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝚂𝙰𝙽𝙽𝚄 𝙼𝙳 𝙼𝙸𝙽𝙸 𝙱𝙾𝚃
+│© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈🥷𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁
 ╰────────────────
 
 ⟢ System: *${os.type()} ${os.release()}*
