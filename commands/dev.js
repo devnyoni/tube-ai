@@ -30,7 +30,7 @@ module.exports = {
 │ 𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁🥷
 │
 │ 🤖 *BOT DETAILS:*
-│ ├─ Name: Sannu Md
+│ ├─ Name: 𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁
 │ ├─ Developer: nyoni
 │ ├─ Version: 2.0.0
 │ ├─ Library: Baileys MD
