@@ -40,7 +40,7 @@ module.exports = {
                     externalAdReply: {
                         title: "Group Invite",
                         body: metadata.subject,
-                        thumbnailUrl: "https://files.catbox.moe/nmcqfa.jpg",
+                        thumbnailUrl: "https://files.catbox.moe/8s7lxh.jpg",
                         sourceUrl: link,
                         mediaType: 1,
                         renderLargerThumbnail: true
