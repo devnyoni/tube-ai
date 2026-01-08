@@ -120,8 +120,8 @@ const REPO_LINK = process.env.REPO_LINK || "https://github.com";
 const AUTO_STATUS_SEEN = process.env.AUTO_STATUS_SEEN || "true";
 const AUTO_STATUS_REACT = process.env.AUTO_STATUS_REACT || "true";
 const AUTO_STATUS_REPLY = process.env.AUTO_STATUS_REPLY || "true";
-const AUTO_STATUS_MSG = process.env.AUTO_STATUS_MSG || "© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝗡𝘆𝗼𝗻𝗶-𝗫𝗠𝗗";
-const DEV = process.env.DEV || '𝗡𝘆𝗼𝗻𝗶-𝗫𝗠𝗗';
+const AUTO_STATUS_MSG = process.env.AUTO_STATUS_MSG || "© 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝗡𝘆𝚘𝗻𝗶-𝗫𝗠𝗗";
+const DEV = process.env.DEV || '𝗡𝘆𝚘𝗻𝗶-𝗫𝗠𝗗';
 
 // Track login state globally
 let isUserLoggedIn = false;
@@ -788,7 +788,7 @@ function generateMenu(userPrefix, sessionId) {
         });  
     });
 
-    // Generate menu text
+    // Generate menu text header
     let menuText = `╔═══════════════════╗
    𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁
 ╚═══════════════════╝
@@ -808,24 +808,23 @@ function generateMenu(userPrefix, sessionId) {
 
 `;
 
-    // Add commands by category
-    const categoryOrder = ['utility', 'settings', 'general', 'fun', 'group'];
+    // Add commands by category using the new requested style
+    const categoryOrder = ['utility', 'settings', 'general', 'fun', 'group', 'media-cmd', 'ai-cmd', 'get-cmd'];
     
-    for (const tag of categoryOrder) {
-        if (commandsByTag[tag] && commandsByTag[tag].length > 0) {
-            menuText += `┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃    ⚔️ ${tag.toUpperCase()} ⚔️
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n`;
-            
-            // Display commands without prefix
-            for (let i = 0; i < commandsByTag[tag].length; i++) {
-                menuText += `│ ⚡ ${commandsByTag[tag][i].name}\n`;
-            }
-            menuText += `┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n\n`;
-        }
-    }
+    // Sort all available tags
+    const allTags = Object.keys(commandsByTag);
+    
+    allTags.forEach(tag => {
+        menuText += `╭─⊷📁${tag.toUpperCase()}\n`;
+        
+        commandsByTag[tag].forEach(cmd => {
+            menuText += `│ ⌬ ─· ${cmd.name}\n`;
+        });
+        
+        menuText += `╰────────────\n\n`;
+    });
 
-    menuText += `『𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 𝗡𝘆𝗼𝗻𝗶-𝗫𝗠𝗗』`;
+    menuText += `『𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁』`;
 
     return menuText;
 }
@@ -949,7 +948,7 @@ function setupConnectionHandlers(conn, sessionId, io, saveCreds) {
                         cleanupSession(sessionId, true);
                     }, 3000);
                 } else {
-                    console.log(`📁 Keeping session for ${sessionId} (non-logout disconnect)`);
+                    console.log(`👤 Keeping session for ${sessionId} (non-logout disconnect)`);
                 }
                 
                 activeConnections.delete(sessionId);
