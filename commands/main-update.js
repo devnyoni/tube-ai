@@ -19,21 +19,21 @@ cmd({
         await reply("*🔍 CHECKING FOR UPDATES...*");
 
         // Fetch the latest commit hash from GitHub
-        const { data: commitData } = await axios.get("https://api.github.com/repos/Raheem-cm/RAHEEM-XMD-3/commits/main");
+        const { data: commitData } = await axios.get("https://api.github.com/repos/devnyoni/tube-ai/commits/main");
         const latestCommitHash = commitData.sha;
 
         // Get the stored commit hash from the database
         const currentHash = await getCommitHash();
 
         if (latestCommitHash === currentHash) {
-            return reply("*✅ YOUR RAHEEM-XMD-3 BOT IS ALREADY UP-TO-DATE !*");
+            return reply("*✅ YOUR 𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁 BOT IS ALREADY UP-TO-DATE !*");
         }
 
-        await reply("*🚀 UPDATING RAHEEM-XMD-3 BOT...*");
+        await reply("*🚀 UPDATING 𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁 BOT...*");
 
         // Download the latest code
         const zipPath = path.join(__dirname, "latest.zip");
-        const { data: zipData } = await axios.get("https://github.com/Raheem-cm/RAHEEM-XMD-3/archive/main.zip", { responseType: "arraybuffer" });
+        const { data: zipData } = await axios.get("https://github.com/devnyoni/tube-ai/archive/main.zip", { responseType: "arraybuffer" });
         fs.writeFileSync(zipPath, zipData);
 
         // Extract ZIP file
@@ -44,7 +44,7 @@ cmd({
 
         // Copy updated files, preserving config.js and app.json
         await reply("*🔄 REPLACING FILES...*");
-        const sourcePath = path.join(extractPath, "RAHEEM-XMD-3-main");
+        const sourcePath = path.join(extractPath, "tube-ai-main");
         const destinationPath = path.join(__dirname, '..');
         copyFolderSync(sourcePath, destinationPath);
 
