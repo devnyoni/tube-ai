@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MORTAL-KOMBAT-XR | VANGUARD</title>
+  <title>𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁 | INFERNO</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --neon-purple: #bc13fe;
-      --neon-blue: #00d2ff;
-      --neon-pink: #ff0055;
-      --dark-void: #020205;
-      --glass: rgba(255, 255, 255, 0.03);
-      --glass-border: rgba(255, 255, 255, 0.1);
-      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      --fire-red: #ff2200;
+      --fire-orange: #ff8800;
+      --electric-blue: #00d2ff;
+      --neon-green: #39ff14;
+      --dark-void: #050000;
+      --glass: rgba(255, 255, 255, 0.05);
+      --transition: all 0.3s ease;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,347 +25,246 @@
       color: #fff;
       overflow-x: hidden;
       min-height: 100vh;
+      background: radial-gradient(circle at center, #1a0500 0%, #050000 100%);
     }
 
-    /* Animated Cyber Background */
-    .cyber-bg {
+    /* Fire & Smoke Animation Background */
+    .fire-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: 
-        radial-gradient(circle at 50% 50%, rgba(188, 19, 254, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 0% 0%, rgba(0, 210, 255, 0.1) 0%, transparent 30%);
-      z-index: -2;
-    }
-
-    .grid-overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background-image: linear-gradient(rgba(188, 19, 254, 0.05) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(188, 19, 254, 0.05) 1px, transparent 1px);
-      background-size: 50px 50px;
-      transform: perspective(500px) rotateX(60deg);
-      transform-origin: top;
-      animation: grid-move 10s linear infinite;
+      background: linear-gradient(0deg, rgba(255, 34, 0, 0.1) 0%, transparent 50%);
       z-index: -1;
-      opacity: 0.5;
+      pointer-events: none;
     }
 
-    @keyframes grid-move {
-      from { background-position: 0 0; }
-      to { background-position: 0 50px; }
+    /* Animated Grid */
+    .grid {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: 
+        linear-gradient(var(--electric-blue) 0.5px, transparent 0.5px),
+        linear-gradient(90deg, var(--electric-blue) 0.5px, transparent 0.5px);
+      background-size: 60px 60px;
+      opacity: 0.1;
+      z-index: -1;
+      transform: perspective(1000px) rotateX(60deg);
+      transform-origin: top;
+      animation: move 5s linear infinite;
     }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    @keyframes move { from { background-position: 0 0; } to { background-position: 0 60px; } }
 
-    /* Glass Navigation */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* Floating Nav */
     nav {
       position: fixed;
-      top: 20px; left: 50%; transform: translateX(-50%);
-      width: 90%; max-width: 1100px;
-      background: rgba(2, 2, 5, 0.8);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 15px 30px;
+      top: 15px; left: 50%; transform: translateX(-50%);
+      width: 90%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(15px);
+      border: 1px solid var(--fire-red);
+      border-radius: 50px;
+      padding: 12px 30px;
       z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 0 20px rgba(255, 34, 0, 0.3);
     }
 
     .nav-logo {
       font-family: 'Orbitron', sans-serif;
       font-weight: 900;
-      letter-spacing: 2px;
-      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 1.4rem;
+      color: var(--fire-red);
+      text-shadow: 0 0 10px var(--fire-red);
+      font-size: 1.2rem;
+    }
+
+    /* Neon Green Channel Style */
+    .channel-link {
+      color: var(--neon-green) !important;
+      text-decoration: none;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 0 0 8px var(--neon-green);
+      transition: var(--transition);
+    }
+
+    .channel-link:hover {
+      filter: brightness(1.3);
+      transform: scale(1.05);
     }
 
     /* Header Section */
-    header {
-      padding: 180px 0 100px;
-      text-align: center;
-    }
+    header { padding: 160px 0 80px; text-align: center; }
 
     .hero-title {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(3rem, 10vw, 6rem);
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 0.9;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      line-height: 1;
       margin-bottom: 20px;
-      position: relative;
+      background: linear-gradient(to bottom, #fff 20%, var(--fire-red) 60%, var(--fire-orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 15px rgba(255, 34, 0, 0.5));
     }
 
-    .glitch-text {
-      color: #fff;
-      text-shadow: 3px 0 var(--neon-pink), -3px 0 var(--neon-blue);
-      animation: glitch 3s infinite;
-    }
-
-    @keyframes glitch {
-      0% { text-shadow: 3px 0 var(--neon-pink), -3px 0 var(--neon-blue); }
-      50% { text-shadow: -3px 0 var(--neon-pink), 3px 0 var(--neon-blue); }
-      100% { text-shadow: 3px 0 var(--neon-pink), -3px 0 var(--neon-blue); }
-    }
-
-    /* Cards - Premium Glassmorphism */
-    .cyber-card {
-      background: var(--glass);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--glass-border);
-      border-radius: 30px;
+    /* 🔥 Inferno Cards */
+    .inferno-card {
+      background: rgba(15, 0, 0, 0.8);
+      border-radius: 20px;
       padding: 40px;
-      margin-bottom: 50px;
+      border: 1px solid var(--fire-orange);
+      box-shadow: inset 0 0 20px rgba(255, 136, 0, 0.1);
+      margin-bottom: 40px;
       position: relative;
-      overflow: hidden;
-      transition: var(--transition);
     }
 
-    .cyber-card:hover {
-      border-color: var(--neon-purple);
-      box-shadow: 0 0 40px rgba(188, 19, 254, 0.2);
-      transform: translateY(-10px);
+    .inferno-card::after {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
+      background: linear-gradient(90deg, var(--fire-red), var(--electric-blue), var(--fire-red));
     }
 
-    .card-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2rem;
-      margin-bottom: 30px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .card-title i { color: var(--neon-blue); }
-
-    /* Input & Button Styles */
-    .input-wrapper {
-      position: relative;
-      margin-bottom: 30px;
-    }
-
+    /* Input & Action */
     input {
       width: 100%;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--glass-border);
-      padding: 20px 25px;
-      border-radius: 15px;
-      color: #fff;
-      font-family: 'Syncopate', sans-serif;
-      font-size: 1rem;
-      transition: var(--transition);
-    }
-
-    input:focus {
-      outline: none;
-      border-color: var(--neon-blue);
-      background: rgba(255,255,255,0.1);
-    }
-
-    .btn-glow {
-      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-      border: none;
-      padding: 20px 40px;
-      border-radius: 15px;
-      color: #fff;
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
-      cursor: pointer;
-      width: 100%;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: var(--transition);
-      box-shadow: 0 0 20px rgba(188, 19, 254, 0.4);
-    }
-
-    .btn-glow:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 40px rgba(188, 19, 254, 0.6);
-    }
-
-    /* Pairing Code Box */
-    .pairing-box {
       background: #000;
-      border: 2px dashed var(--neon-blue);
-      padding: 40px;
-      border-radius: 20px;
-      margin-top: 30px;
-      text-align: center;
-      display: none;
-    }
-
-    .pairing-box.active { display: block; animation: zoomIn 0.5s; }
-
-    .code-display {
+      border: 2px solid var(--electric-blue);
+      padding: 18px;
+      border-radius: 10px;
+      color: var(--electric-blue);
       font-family: 'Orbitron', sans-serif;
-      font-size: 3.5rem;
-      color: var(--neon-blue);
-      letter-spacing: 15px;
-      margin: 20px 0;
-      text-shadow: 0 0 20px var(--neon-blue);
+      margin-bottom: 25px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
     }
 
-    /* Stats Grid */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      margin-bottom: 50px;
+    .btn-fire {
+      background: linear-gradient(45deg, var(--fire-red), var(--fire-orange));
+      border: none;
+      padding: 18px;
+      width: 100%;
+      border-radius: 10px;
+      color: #000;
+      font-weight: 900;
+      font-family: 'Orbitron', sans-serif;
+      cursor: pointer;
+      text-transform: uppercase;
+      box-shadow: 0 0 20px rgba(255, 34, 0, 0.4);
+      transition: var(--transition);
     }
 
-    .stat-card {
-      background: var(--glass);
+    .btn-fire:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 35px rgba(255, 34, 0, 0.7);
+    }
+
+    /* Code Result */
+    .pairing-box {
+      margin-top: 30px;
+      background: rgba(0, 210, 255, 0.1);
+      border: 2px dashed var(--electric-blue);
       padding: 30px;
-      border-radius: 25px;
-      text-align: center;
-      border: 1px solid var(--glass-border);
-    }
-
-    .stat-card h3 { font-size: 2.5rem; color: var(--neon-purple); }
-
-    /* Footer */
-    footer {
-      padding: 100px 0 50px;
-      text-align: center;
-      opacity: 0.6;
-    }
-
-    /* Animations */
-    @keyframes zoomIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .loading-spinner {
-      width: 40px; height: 40px;
-      border: 4px solid rgba(188, 19, 254, 0.2);
-      border-top: 4px solid var(--neon-purple);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 20px auto;
+      border-radius: 15px;
       display: none;
+      animation: flicker 0.2s infinite alternate;
     }
 
-    @keyframes spin { to { transform: rotate(360deg); } }
+    .pairing-code {
+      font-size: 3rem;
+      color: #fff;
+      letter-spacing: 12px;
+      text-shadow: 0 0 20px var(--electric-blue);
+      margin: 15px 0;
+    }
 
+    /* Stats */
+    .stat-box {
+      border-left: 4px solid var(--fire-red);
+      padding: 15px;
+      background: rgba(255, 34, 0, 0.05);
+    }
+
+    .stat-box h4 { color: var(--electric-blue); }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @keyframes flicker { from { opacity: 0.9; } to { opacity: 1; } }
   </style>
 </head>
 <body>
 
-  <div class="cyber-bg"></div>
-  <div class="grid-overlay"></div>
+  <div class="fire-overlay"></div>
+  <div class="grid"></div>
 
   <nav>
     <div class="nav-logo">𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁</div>
-    <div style="display: flex; gap: 20px;">
-      <a href="https://whatsapp.com/channel/0029VbAffhD2ZjChG9DX922r" style="color: var(--neon-blue); text-decoration: none; font-weight: bold;">CHANNEL</a>
-    </div>
+    <a href="https://whatsapp.com/channel/0029VbAffhD2ZjChG9DX922r" class="channel-link">JOIN CHANNEL</a>
   </nav>
 
   <header class="container">
-    <h1 class="hero-title glitch-text">MORTAL<br>KOMBAT XR</h1>
-    <p style="font-size: 1.5rem; letter-spacing: 5px; color: var(--neon-blue);">NEXT-GEN WHATSAPP AUTOMATION</p>
-    
-    <div class="stats-grid" style="margin-top: 80px;">
-      <div class="stat-card">
-        <h3 id="userCount">1.2k+</h3>
-        <p>ACTIVE USERS</p>
-      </div>
-      <div class="stat-card">
-        <h3 style="color: var(--neon-blue);">STABLE</h3>
-        <p>SYSTEM STATUS</p>
-      </div>
-      <div class="stat-card">
-        <h3>24/7</h3>
-        <p>UPTIME</p>
-      </div>
-    </div>
+    <h1 class="hero-title">𝙼𝙾𝚁𝚃𝙰𝙻-𝙺𝙾𝙼𝙱𝙰𝚃-𝚇𝚁</h1>
+    <p style="color: var(--electric-blue); letter-spacing: 3px; font-weight: bold;">FIRE, ICE & CYBER DOMINATION</p>
   </header>
 
   <main class="container">
     
-    <section class="cyber-card">
-      <div class="card-title">
-        <i class="fas fa-link"></i>
-        <h2>CORE CONNECTION</h2>
-      </div>
+    <section class="inferno-card">
+      <h2 style="margin-bottom: 20px; color: var(--fire-orange);"><i class="fas fa-burn"></i> LINK SYSTEM</h2>
+      <p style="margin-bottom: 20px; opacity: 0.8;">Sync your device with the inferno core. Enter phone number below:</p>
       
-      <p style="margin-bottom: 30px; opacity: 0.7;">Enter your phone number with country code to synchronize with Mortal-Kombat-XR servers.</p>
-      
-      <div class="input-wrapper">
-        <input type="tel" id="phoneNumber" placeholder="e.g. 25576000xxxx">
-      </div>
-      
-      <button class="btn-glow" id="getPairingCode">INITIALIZE PAIRING</button>
-      
-      <div class="loading-spinner" id="loader"></div>
+      <input type="tel" id="number" placeholder="255XXXXXXXXX">
+      <button class="btn-fire" id="start">GET PAIRING CODE</button>
 
-      <div class="pairing-box" id="pairingBox">
-        <p style="color: var(--neon-blue);">ENTER THIS CODE IN LINKED DEVICES</p>
-        <div class="code-display" id="codeDisplay">00000000</div>
-        <button onclick="copyCode()" style="background: transparent; border: 1px solid #fff; color: #fff; padding: 10px 20px; border-radius: 10px; cursor: pointer;">COPY CODE</button>
+      <div class="pairing-box" id="result">
+        <p style="color: var(--electric-blue); font-size: 0.8rem;">SERVER RESPONSE: SUCCESS</p>
+        <div class="pairing-code" id="code">--------</div>
+        <p style="font-size: 0.8rem; opacity: 0.6;">COPY AND ENTER IN WHATSAPP LINKED DEVICES</p>
       </div>
     </section>
 
-    <div class="stats-grid">
-      <div class="stat-card" style="text-align: left;">
-        <i class="fas fa-bolt" style="font-size: 2rem; color: var(--neon-blue); margin-bottom: 20px;"></i>
-        <h4>SONIC SPEED</h4>
-        <p>Response time under 0.5s with optimized socket nodes.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+      <div class="stat-box">
+        <h4>⚡ SPEED</h4>
+        <p>Optimized with Blue-Lightning Nodes.</p>
       </div>
-      <div class="stat-card" style="text-align: left;">
-        <i class="fas fa-shield-virus" style="font-size: 2rem; color: var(--neon-purple); margin-bottom: 20px;"></i>
-        <h4>ANTI-BAN</h4>
-        <p>Advanced stealth algorithms to prevent account detection.</p>
-      </div>
-      <div class="stat-card" style="text-align: left;">
-        <i class="fas fa-microchip" style="font-size: 2rem; color: var(--neon-pink); margin-bottom: 20px;"></i>
-        <h4>AI CORE</h4>
-        <p>Integrated with GPT-4 for intelligent conversations.</p>
+      <div class="stat-box" style="border-left-color: var(--electric-blue);">
+        <h4>🛡️ SECURITY</h4>
+        <p>Anti-Ban Firewall Protection Active.</p>
       </div>
     </div>
 
   </main>
 
   <footer>
-    <p>© 2026 MORTAL-KOMBAT-XR | DESIGNED BY NYONI XMD</p>
-    <div style="margin-top: 20px; font-size: 2rem; display: flex; justify-content: center; gap: 30px;">
-      <i class="fab fa-whatsapp" style="color: #25d366;"></i>
-      <i class="fab fa-github"></i>
-    </div>
+    <p style="color: var(--fire-red); font-weight: bold;">© 2026 POWERED BY NYONI XMD</p>
+    <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 10px;">The Ultimate Mortal Kombat WhatsApp Experience</p>
   </footer>
 
   <script>
-    const btn = document.getElementById('getPairingCode');
-    const loader = document.getElementById('loader');
-    const pBox = document.getElementById('pairingBox');
-    const cDisplay = document.getElementById('codeDisplay');
+    const startBtn = document.getElementById('start');
+    const resultBox = document.getElementById('result');
+    const codeDisplay = document.getElementById('code');
 
-    btn.addEventListener('click', () => {
-      const num = document.getElementById('phoneNumber').value;
-      if(!num) return alert("Please enter number!");
+    startBtn.addEventListener('click', () => {
+      const num = document.getElementById('number').value;
+      if(!num) return alert("Enter number first!");
 
-      btn.style.display = 'none';
-      loader.style.display = 'block';
-
-      // Simulate connection to your render/backend
+      startBtn.innerHTML = "CONNECTING TO INFERNO...";
+      
       setTimeout(() => {
         const fakeCode = Math.random().toString(36).substring(2, 10).toUpperCase();
-        loader.style.display = 'none';
-        pBox.classList.add('active');
-        cDisplay.innerText = fakeCode;
-      }, 3000);
+        startBtn.style.display = 'none';
+        resultBox.style.display = 'block';
+        codeDisplay.innerText = fakeCode;
+      }, 2500);
     });
-
-    function copyCode() {
-      const text = cDisplay.innerText;
-      navigator.clipboard.writeText(text);
-      alert("Code Copied: " + text);
-    }
   </script>
 </body>
 </html>
