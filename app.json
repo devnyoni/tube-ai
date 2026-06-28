@@ -1,0 +1,18 @@
+{
+  "name": "🗡️MOMY-KIDY MD🗡️",
+  "description": "SESSION ID GENERATOR FOR WHATSAPP BOTS",
+  "logo": "https://files.catbox.moe/natk49.jpg",
+  "repository": "https://github.com/devnyoni/tube-ai",
+  "keywords": ["MOTOR COMBAT"],
+  "success_url": "/", 
+  "buildpacks": [
+    { "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" }
+  ],
+  "env": {      
+    "MESSAGE": {
+      "description": "Msg Attached With Session ID",
+      "value": "🔐 𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 nyoni xmd🔐",
+      "required": false 
+    }
+  }
+}
